@@ -1,9 +1,9 @@
 NAME:=$(shell basename `git rev-parse --show-toplevel`)
 
-all: up
+kali:
+	docker build -f ./dockerfiles/Kali-Dockerfile -t kali-$(NAME) .
+	docker run -it kali-$(NAME)
 
-up: build 
-	docker run -it $(NAME)
-
-build:
-	docker build -t $(NAME) .
+ubuntu:
+	docker build -f ./dockerfiles/Ubuntu-Dockerfile -t ubuntu-$(NAME) .
+	docker run -it ubuntu-$(NAME)
