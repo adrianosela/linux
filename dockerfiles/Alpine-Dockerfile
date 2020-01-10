@@ -1,0 +1,9 @@
+# Pull base image
+FROM alpine:latest
+
+# Install basic tooling and deps
+RUN apk --update add git less openssh curl git htop man unzip vim wget bash && \
+  rm -rf /var/lib/apt/lists/*
+
+# Land in a bash term
+CMD ["/bin/bash"]

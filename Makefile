@@ -7,3 +7,7 @@ kali:
 ubuntu:
 	docker build -f ./dockerfiles/Ubuntu-Dockerfile -t ubuntu-$(NAME) .
 	docker run -it ubuntu-$(NAME)
+
+alpine:
+	docker build -f ./dockerfiles/Alpine-Dockerfile -t alpine-$(NAME) .
+	docker run -it alpine-$(NAME)
